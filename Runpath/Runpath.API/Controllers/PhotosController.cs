@@ -27,6 +27,8 @@ namespace Runpath.API.Controllers
         [Route("GetTransactionById")]
         public ActionResult GetPhotosByUserId(int UserID)
         {
+            var test = _userService.GetUserByID(UserID);
+
             return Ok();
         }
     }

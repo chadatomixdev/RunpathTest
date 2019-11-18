@@ -7,6 +7,5 @@
         public string Title { get; set; }
         public string URL { get; set; }
         public string ThumbnailURL { get; set; }
-        public Album Album { get; set; }
     }
 }
