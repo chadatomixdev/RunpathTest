@@ -8,4 +8,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Runpath.Data\Runpath.Data.csproj" />
+    <ProjectReference Include="..\Runpath.Shared\Runpath.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

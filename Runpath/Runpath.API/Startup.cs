@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Runpath.API.Extensions;
+using Runpath.Data;
 
 namespace Runpath.API
 {
@@ -28,10 +30,14 @@ namespace Runpath.API
         /// Called by the runtime to Add System Services to the container
         /// </summary>
         /// <param name="services"></param>
-        public static void ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services)
         {
             services.AddSystemServices();
             services.AddControllers();
+
+            // Add framework services.
+            //services.AddDbContext<RunpathDBContext>(options =>
+            // options.UseSqlite(_configuration.GetConnectionString("DefaultConnection")));
         }
 
         /// <summary>

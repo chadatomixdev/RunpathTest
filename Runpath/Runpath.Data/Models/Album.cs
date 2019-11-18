@@ -1,4 +1,4 @@
-﻿namespace Runpath.Shared.Models
+﻿namespace Runpath.Data.Models
 {
     public class Album
     {

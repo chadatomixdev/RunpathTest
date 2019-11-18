@@ -1,6 +1,11 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 using Microsoft.OpenApi.Models;
+using Runpath.Data;
+using Runpath.Data.Repository;
+using Runpath.Data.Services;
+using Runpath.Shared.Interfaces;
+using Runpath.Shared.Services;
 
 namespace Runpath.API.Extensions
 {
@@ -23,6 +28,12 @@ namespace Runpath.API.Extensions
                     },
                 });
             });
+
+            services.AddScoped<EFRepository>();
+            services.AddScoped<RepositoryService>();
+            services.AddEntityFrameworkSqlite().AddDbContext<RunpathDBContext>();
+            services.AddScoped<IUserService, UserService>();
+
             return services;
         }
     }

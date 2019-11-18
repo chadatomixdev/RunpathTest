@@ -1,8 +1,8 @@
-﻿namespace Runpath.Shared.Models
+﻿namespace Runpath.Data.Models
 {
     public class User
     {
-        public int AlbumID { get; set; }
+        public int UserID { get; set; }
         public string UserName { get; set; }
     }
 }
