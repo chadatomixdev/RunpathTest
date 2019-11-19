@@ -9,7 +9,9 @@ namespace Runpath.API.Controllers
     {
         #region Properties
 
-        private readonly IUserService _userService;
+        private readonly IUserService  _userService;
+        private readonly IAlbumService _albumService;
+        private readonly IPhotoService _photoService;
 
         #endregion
 
@@ -27,7 +29,7 @@ namespace Runpath.API.Controllers
         [Route("GetPhotosByUserId")]
         public ActionResult GetPhotosByUserId(int UserID)
         {
-            var test = _userService.GetUserByID(UserID);
+
 
             return Ok();
         }
