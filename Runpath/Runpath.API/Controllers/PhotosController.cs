@@ -24,7 +24,7 @@ namespace Runpath.API.Controllers
         /// <param name="transactionID"></param>
         /// <returns></returns>
         [HttpGet]
-        [Route("GetTransactionById")]
+        [Route("GetPhotosByUserId")]
         public ActionResult GetPhotosByUserId(int UserID)
         {
             var test = _userService.GetUserByID(UserID);
