@@ -1,6 +1,6 @@
 ﻿namespace Runpath.Data.Models
 {
-    public class Photos
+    public class Photo
     {
         public int AlbumID { get; set; }
         public int PhotoID { get; set; }
