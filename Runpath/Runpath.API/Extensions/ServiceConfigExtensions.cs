@@ -32,8 +32,9 @@ namespace Runpath.API.Extensions
             services.AddScoped<EFRepository>();
             services.AddScoped<RepositoryService>();
             services.AddEntityFrameworkSqlite().AddDbContext<RunpathDBContext>();
-            services.AddScoped<IUserService, UserService>();
-
+            services.AddScoped<IAlbumService, AlbumService>();
+            services.AddScoped<IPhotoService, PhotoService>();
+            
             return services;
         }
     }
