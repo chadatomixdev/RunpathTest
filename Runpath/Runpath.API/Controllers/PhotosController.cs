@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Runpath.API.Representer;
 using Runpath.Shared.Interfaces;
+using Runpath.Shared.Representers;
 using System.Collections.Generic;
 
 namespace Runpath.API.Controllers
@@ -36,9 +36,18 @@ namespace Runpath.API.Controllers
         [Route("GetPhotosByUserId")]
         public ActionResult GetPhotosByUserId(int userID)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            if (userID is 0)
+                return BadRequest("User is invalid");
+
             var response = new List<AlbumRepresenter>();
 
             var albums = _albumService.GetAlbumsByUserId(userID);
+
+            if (albums.Count == 0)
+                return BadRequest("No albums found");
 
             //Get Photos per Album
             foreach (var album in albums)
